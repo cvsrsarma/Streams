@@ -1,15 +1,16 @@
 package com.org.streams.first.utils;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.function.Supplier;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Utils {
 	public static int[] arr = { 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
@@ -152,6 +153,54 @@ public class Utils {
 		}
 		return  list;
 	}
+	public static void divideList() {
+		System.out.println("List of integers, separate odd and even numbers");
+		List<Integer> iL=getIntegerList();
+		Map<Boolean, List<Integer>> map=iL.stream().sorted().collect(Collectors.partitioningBy(e->e%2==0));
+		System.out.println(map);
+	}
+	public static List<Double> decimalList=Arrays.asList(12.45,793.47,263.5697,26.593,42.5937,476.4592,36.93,49.82,273.427,27.36,49.82,472.48);
 	
-
+	public static void sortDecimalList() {
+		System.out.println("\n\nSort Decimal list");
+		System.out.println(decimalList);
+		System.out.println(decimalList.stream().sorted().collect(Collectors.toList()));
+		System.out.println("\n\nSort Decimal list reverse order");
+		System.out.println(decimalList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+	}
+	public static void getFirstNMimndNMax() {
+		System.out.println("\n\nget First N miminum and N maxmim numbers");
+		System.out.println(decimalList);
+		System.out.println("Please enter value of N between 1 to "+arr1.length);
+		Scanner s= new Scanner(System.in);
+		int i= s.nextInt();
+		List<Integer> iL= getListFromAry2();
+		System.out.println(iL);
+		System.out.println(iL.stream().collect(Collectors.toSet()).stream().sorted().limit(i).collect(Collectors.toList()));
+		//forEach(System.out::print);
+		//.forEach(System.out::print);
+		System.out.println("\n");
+		System.out.println(iL.stream().sorted(Comparator.reverseOrder()).limit(i).collect(Collectors.toList()));
+	}
+	public static void sumOfAllDigist() {
+		System.out.println("Enter a number");
+		Scanner s = new Scanner(System.in);
+		int i= s.nextInt();
+		System.out.println(Stream.of(String.valueOf(i).split("")).collect(Collectors.summarizingInt(Integer::parseInt)));
+	}
+	static SecureRandom rnd = new SecureRandom();
+	public static void findCommonNumbersFrom2Arys() {
+		System.out.println("Enter a array size and range ");
+		Scanner s = new Scanner(System.in);
+		ArrayList<Integer> l1=new ArrayList<Integer>(),l2=new ArrayList<Integer>();
+		int i=s.nextInt();
+		for(int j=0; j<i;j++) {
+			l1.add(rnd.nextInt(30+i));
+			l2.add(rnd.nextInt(35)+i);
+		}
+		System.out.println(l1);
+		System.out.println(l2);
+		System.out.println("common numbers");
+		l1.stream().filter(l2::contains).forEach(System.out::print);
+	}
 }

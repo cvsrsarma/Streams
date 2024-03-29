@@ -33,6 +33,16 @@ public class StreamsEx {
 		
 		StringUtils.findFndMs();
 		
+		Utils.divideList();
+		
+		StringUtils.removeDuplicates();
+		Utils.sortDecimalList();
+		Utils.getFirstNMimndNMax();
+		StringUtils.findAnagrams();
+		
+		Utils.sumOfAllDigist();
+		Utils.findCommonNumbersFrom2Arys();
+		StringUtils.strRevAllWords();
 	}
 	
 	

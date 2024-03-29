@@ -2,12 +2,15 @@ package com.org.streams.first.utils;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.org.streams.first.app.model.Course;
 import com.org.streams.first.app.model.Employee;
@@ -128,6 +131,9 @@ public class StringUtils {
 		
 		System.out.println(s1);
 		System.out.println(s1.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting())));
+		
+		System.out.println("adads239alksdjfoi23u09u23kjasdlkjfaoseur0293iualksjdflaksdhjfioquywefoiasjdfkljasdhfklasdhfiopuasydfkjahdsfkjashdfiuaysdfiuhasdkfjhao9wulkhjasdf".chars()
+				.mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
 	}
 	
 	public static void findMaleNdFemals() {
@@ -230,5 +236,58 @@ public class StringUtils {
 		empL.stream().sorted(Comparator.comparing(Employee::getDept).thenComparing(Employee::getEmpId).thenComparing(Employee::getSalary)).
 			forEach(System.out::println);
 	}
+
+	public static void removeDuplicates() {
+		System.out.println("\n\nremove duplicate elements from a list");
+		int i= rnd.nextInt(sList.size()/2);
+		i+=3;
+		for (int j=0;j<i;j++) {
+			String s= sList.get(rnd.nextInt(sList.size()));
+					sList.add(s);
+		}
+		System.out.println(sList.stream().sorted().collect(Collectors.toList()));
+		System.out.println("Removed Duplicates");
+		System.out.println(sList.stream().collect(Collectors.toSet()));
+		System.out.println("Removed Dup[licates and sorted");
+		System.out.println(sList.stream().collect(Collectors.toSet()).stream().sorted().collect(Collectors.toList()));
+		System.out.println("Removed Duplicates and revers sorted");
+		System.out.println(sList.stream().collect(Collectors.toSet()).stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+		System.out.println("frequency of each element in an array or a list");
+		System.out.println(sList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())));
+		System.out.println("\n\n join the strings with ‘{‘ as prefix, ‘}’ as suffix and ‘,’ as delimiter");
+		System.out.println(sList);
+		System.out.println(sList.stream().collect(Collectors.joining(", "," {", "}")));
+		}
+
+	public static void findAnagrams() {
+		System.out.println("CarRace and RaceCar is an anagaram");
+		String s1="RaceCar",s2="CarRace";
+		System.out.println(s1);
+		System.out.println("Enter an anagram");
+		Scanner stringScanner = new Scanner(System.in); 
+		
+			  s1 = stringScanner.next(); 
+			  s2= stringScanner.next(); 
+		s1=Stream.of(s1.split("")).map(e->e.toUpperCase()).sorted().collect(Collectors.joining());
+		System.out.println(s1);
+		s2=Stream.of(s2.split("")).map(e->e.toUpperCase()).sorted().collect(Collectors.joining());
+		System.out.println(s2);
+		if(s1.equals(s2)) {
+			System.out.println("givenString are anagrams");
+		} else {
+			System.out.println("givenString are not anagrams");
+		}
+	}
+	
+	public static void strRevAllWords() {
+		String s="Reverse each word of a string";
+		System.out.println(s);
+		String revS=Arrays.stream(s.split(" ")).map(w-> new StringBuffer(w).reverse()).collect(Collectors.joining(" "));
+		System.out.println(revS);
+		
+		
+	}
+	
+	
 
 }
