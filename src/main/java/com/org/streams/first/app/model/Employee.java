@@ -8,6 +8,7 @@ public class Employee {
 	private String empName;
 	private int empId;
 	private int age;
+	private String gender;
 	public int getAge() {
 		return age;
 	}
@@ -18,7 +19,14 @@ public class Employee {
 	private String address1;
 	private String address2;
 	private String zipCode;
+	private String dept;
 	
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
 	/*
 	 * private List<String> aList; private AccessDetails accd; private
 	 * List<AccessDetails> accDList;
@@ -78,7 +86,7 @@ public class Employee {
 		this.address2 = address2;
 		this.zipCode = zipCode;
 	}
-	public Employee(String empName, int empId, int salary, String address1, String address2, String zipCode, int age) {
+	public Employee(String empName, int empId, int salary, String address1, String address2, String zipCode, int age, String gender, String dept) {
 		super();
 		this.empName = empName;
 		this.empId = empId;
@@ -87,11 +95,24 @@ public class Employee {
 		this.address2 = address2;
 		this.zipCode = zipCode;
 		this.age= age;
+		this.gender=gender;
+		this.dept=dept;
 	}
+	
 	@Override
 	public String toString() {
-		return "Employee [empName=" + empName + ", empId=" + empId + ", age=" + age + ", salary=" + salary
-				+ ", address1=" + address1 + ", address2=" + address2 + ", zipCode=" + zipCode + "]";
+		return "Employee [empName=" + empName + ", empId=" + empId + ", age=" + age + ", gender=" + gender + ", salary="
+				+ salary + ", address1=" + address1 + ", address2=" + address2 + ", zipCode=" + zipCode + ", dept="
+				+ dept + "]";
 	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
+	
+	
 
 }

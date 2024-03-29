@@ -8,25 +8,52 @@ import com.org.streams.first.app.model.Employee;
 
 public class ModelHelper {
 	
+	private static int count=0;
+	private static List<Employee>arrayList = new ArrayList<Employee>();
 	public static List<Employee> getEmployeeList(){
-		List<Employee>arrayList = new ArrayList<Employee>();
+		if(count==0) {
 		for(int i=0; i<10; i++) {
-			arrayList.add(getNewEmp());
+			int j= randomInt(3);
+			if(j%2==0)
+				arrayList.add(getNewMEmp());
+			else
+				arrayList.add(getNewFEmp());
+		}
 		}
 		return arrayList;
 	}
 	
-	private static Employee getNewEmp() {
-		return new Employee(random(),randomInt(5),randomInt(6),random(),random(),random(),randomInt(2));
+	private static Employee getNewMEmp() {
+		return new Employee(random(),randomInt(5),randomInt(6),random(),random(),random(),randomInt(2),"M",getDept());
 	}
-
+	private static Employee getNewFEmp() {
+		return new Employee(random(),randomInt(5),randomInt(6),random(),random(),random(),randomInt(2),"F",getDept());
+	}
+	private static String getDept() {
+		int i= randomInt(9);
+		if(i%3==0) {
+			return "A";
+		} else if(i%3==1) {
+			return"B";
+		} else {
+			return "C";
+		}
+	}
+	static final String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	
+	static final String AB1="abcdefghijklmnopqrstuvwxyz";
+	
 	private static String random() {
-		String SALTCHARS = "ABCDabcd";
+		
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
-        while (salt.length() < 6) { // length of the random string.
-            int index = rnd.nextInt(SALTCHARS.length());
-            salt.append(SALTCHARS.charAt(index));
+        salt.append(AB.charAt(rnd.nextInt(AB.length())));
+        int length=rnd.nextInt(8);
+        if(length<3)
+        	length+=3;
+        while (salt.length() < length) { // length of the random string.
+            int index = rnd.nextInt(AB1.length());
+            salt.append(AB1.charAt(index));
         }
         String saltStr = salt.toString();
         
@@ -77,5 +104,21 @@ public class ModelHelper {
 		
 	}
 	
+	private static List<Student> sList= new ArrayList<Student>();
+	
+	static {
+		for(int i=0; i<21; i++) {
+			if(i%3==0)
+				sList.add(new Student(random(),i+100,"Maths",randomInt(2)));
+			else if(i%3==1)
+				sList.add(new Student(random(),i+100,"Physics",randomInt(2)));
+			else
+				sList.add(new Student(random(),i+100,"Chemistry",randomInt(2)));
+		}
+	}
+	
+	public static List<Student> getSList(){
+		return sList;
+	}
 	
 }
