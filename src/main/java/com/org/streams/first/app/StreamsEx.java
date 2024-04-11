@@ -6,6 +6,7 @@ import com.org.streams.first.utils.Utils;
 public class StreamsEx {
 
 	public static void main(String[] args) {
+		StreamsEx.main(args, 1);
 		Utils.seprateOddAndEvenNumbers();
 		Utils.printEven();
 		Utils.filterStrings();
@@ -43,8 +44,12 @@ public class StreamsEx {
 		Utils.sumOfAllDigist();
 		Utils.findCommonNumbersFrom2Arys();
 		StringUtils.strRevAllWords();
+		Utils.highestFromGivenList();
 	}
 	
+	public static void main(String rags[],int i) {
+		System.out.println("over load Main");
+	}
 	
 
 

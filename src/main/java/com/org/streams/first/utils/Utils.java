@@ -4,6 +4,7 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -36,16 +37,17 @@ public class Utils {
     }
 	
 	public static void printEven() {
-		List<Integer>nList=getListFromAry(arr);
-		System.out.println("Find even and do squre");
-		nList.stream().filter(e -> e%2 ==0 ).map(e-> e*e)
-		.forEach(System.out::println);
+		List<Integer>nList=list;
+		System.out.println(nList+"\n\n");
+		nList.stream().filter(e->e%2==0).forEach(System.out::print);
+		System.out.println("\n\nFind even and do squre");
+		nList.stream().filter(e -> e%2 ==0 ).map(e-> e*e).forEach(System.out::print);
 		System.out.println("\n Find odd and do qube");
 		nList.stream().filter(e -> e%2 ==1 ).map(e-> e*e*e)
 		.forEach(System.out::println);
 		
 		System.out.println();
-		System.out.println("\n Find sum of squeres");
+		System.out.println("\n\n Find sum of squeres");
 		
 		System.out.println(nList.stream().map(e -> e*e).reduce(0, Integer::sum));
 		
@@ -59,7 +61,7 @@ public class Utils {
 	public static void filterStrings() {
 		List<String>nList=Arrays.asList(strAry);
 		System.out.println("\n Find all String Contails Spring");
-		nList.stream().filter(e-> e.contains("Spring")).forEach(System.out::println);
+		nList.stream().filter(e-> e.toUpperCase().contains("SPRING")).forEach(System.out::println);
 		System.out.println("\n Find all String lengths");
 		nList.stream().map(e -> e+" "+e.length()).forEach(System.out::println);
 		System.out.println("\nSort the strings");
@@ -70,7 +72,7 @@ public class Utils {
 	}
 	
 	public static void addNumebrsList() {
-		List<Integer> nList=getListFromAry(arr);
+		List<Integer> nList=list;
 		System.out.println("\n Add all nunbers");
 		System.out.println(nList.stream().reduce(0, Utils::add)+"\n");
 		System.out.println("\n Add all nunbers");
@@ -96,9 +98,7 @@ public class Utils {
 	}
 	public static int add(int a, int b) {return a+b;}
 	
-	public static List<Integer> getListFromAry(int[] intAry){
-		return Arrays.asList( 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
-	}
+	
 	
 	public static void createStream() {
 		
@@ -110,12 +110,16 @@ public class Utils {
 		
 		List<Integer> list= getIntegerList();
 		System.out.println(list);
-		System.out.println(list.stream().collect(Collectors.partitioningBy(e->e%2==0)));
-		System.out.println("Sort the List in Reverse order");
+		System.out.println(list.stream().sorted().collect(Collectors.partitioningBy(e->e%2==0)));
+		System.out.println("\n\nSort the List in Reverse order");
+		List<Integer> l1= list.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+		System.out.println(l1);
+		System.out.println("\n\n");
 		list.stream().sorted(Comparator.reverseOrder()).forEach(System.out::print);
 		System.out.println("\n\n");
 		
 		System.out.println("Multiples of 3");
+		System.out.println(list);
 		List<Integer> mList=list.stream().filter(e->e>0).map(e->e*3).collect(Collectors.toList());
 		System.out.println(mList);
 		}
@@ -202,5 +206,11 @@ public class Utils {
 		System.out.println(l2);
 		System.out.println("common numbers");
 		l1.stream().filter(l2::contains).forEach(System.out::print);
+	}
+	public static void highestFromGivenList() {
+		System.out.println("\n\n highest number that exists on a list?");
+		List<Integer> list= getListFromAry2();
+		IntSummaryStatistics stats =list.stream().mapToInt(x->x).summaryStatistics();
+		System.out.println(stats.toString());
 	}
 }

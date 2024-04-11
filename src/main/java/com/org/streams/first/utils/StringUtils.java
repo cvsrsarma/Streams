@@ -256,7 +256,7 @@ public class StringUtils {
 		System.out.println(sList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())));
 		System.out.println("\n\n join the strings with ‘{‘ as prefix, ‘}’ as suffix and ‘,’ as delimiter");
 		System.out.println(sList);
-		System.out.println(sList.stream().collect(Collectors.joining(", "," {", "}")));
+		System.out.println(sList.stream().collect(Collectors.joining("prefix, "," {", "}")));
 		}
 
 	public static void findAnagrams() {
