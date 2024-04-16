@@ -83,7 +83,8 @@ public class StringUtils2 {
 		
 		  System.out.println("::::Answer::::::\n"+groupedBySameAsCIIValue.values());
 		  ConcurrentHashMap<String, Integer> map1 = new ConcurrentHashMap<>();
-		  map1.put(null, "test");
+		  map1.put(null, 43);
+		  map1.put("", null);
 		  
 	}
 	
