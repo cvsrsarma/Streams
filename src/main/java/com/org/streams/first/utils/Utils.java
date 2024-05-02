@@ -1,6 +1,10 @@
 package com.org.streams.first.utils;
 
 import java.security.SecureRandom;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -136,6 +140,8 @@ public class Utils {
 	}
 	static ArrayList<Integer> list = new ArrayList<Integer>();
 	public static List<Integer> getIntegerList(){
+		if(null!=list && list.size()>0)
+			return list;
 		Random ran = new Random();
 		System.out.println("Enter an Integer");
 		Scanner scan = new Scanner(System.in);
@@ -212,5 +218,14 @@ public class Utils {
 		List<Integer> list= getListFromAry2();
 		IntSummaryStatistics stats =list.stream().mapToInt(x->x).summaryStatistics();
 		System.out.println(stats.toString());
+	}
+	
+	public static void find2ndFridayOfNextMonth() {
+		System.out.println("second Friday of next month");
+		LocalDate l= LocalDate.now();
+		System.out.println(l);
+		LocalDate firstInYear = LocalDate.of(l.getYear(),l.getMonth(), 1);
+		LocalDate nextMonth= LocalDate.now().plusMonths(1).with(TemporalAdjusters.dayOfWeekInMonth(2, DayOfWeek.FRIDAY));
+		System.out.println(nextMonth);
 	}
 }

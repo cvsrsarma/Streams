@@ -27,12 +27,15 @@ class A extends ParentClss{
 		A a = new A();
 		a.protectedTest();
 	}
-
+	 protected void protectedTest() throws Exception {
+		 super.protectedTest();
+			System.out.println("child clss");
+		}
 	
 }
 class B extends A{
 	@Override
-	protected void overRd() throws IOException{
+	void overRd() throws IOException{
 		System.out.println("Child method");
 	}
 	protected void overRd(int i)  {

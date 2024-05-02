@@ -15,6 +15,7 @@ public class StringUtils2 {
 	public static final String AB="ABCDEFGHIJKLMNOPQRSRTUVWXYZ";
 	public static final String ba="abcdefghijklmnopqrstuvwxyz";
 	static {
+		
 		sList.add("java");
 		
 		Random rand= new Random();
@@ -83,11 +84,46 @@ public class StringUtils2 {
 		
 		  System.out.println("::::Answer::::::\n"+groupedBySameAsCIIValue.values());
 		  ConcurrentHashMap<String, Integer> map1 = new ConcurrentHashMap<>();
-		  map1.put(null, 43);
-		  map1.put("", null);
+		 // map1.put(null, 43);
+		 // map1.put("", null);
 		  
 	}
 	
+	public static List<String> getSList(){
+		return sList;
+	}
+	
+	public static List<String> randomList=null;;
+	public static List<String> getRandomSizeList(){
+		if(null!=randomList && randomList.size()>0) {
+			return randomList;
+		} else {
+			randomList= new ArrayList();
+		Random rand= new Random();
+		int i= rand.nextInt(AB.length());
+		int j= rand.nextInt(10);
+		if(j<5)
+			j+=3;
+		
+		for(int o=0;o<j;o++) {
+			String str= AB.charAt(i)+""+ba.charAt(i);
+			int x= rand.nextInt(j);
+			for (int k=0; k<j+x;k++) {
+			int temp= rand.nextInt(ba.length());
+			str=str+""+ba.charAt(temp);
+		}
+			randomList.add(str.toLowerCase());
+		
+		}
+		int x= rand.nextInt(randomList.size());
+		String temp=randomList.get(x);
+		randomList.add(temp);
+		randomList.add("ajav");
+		System.out.println(temp);
+		}
+		randomList.add("java");
+		return randomList;
+	}
 	
 
 }

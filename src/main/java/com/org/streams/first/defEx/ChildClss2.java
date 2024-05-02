@@ -2,17 +2,9 @@ package com.org.streams.first.defEx;
 
 import java.io.IOException;
 
-public class ChildClss extends ParentClss{
+public class ChildClss2 extends ChildClss{
 	
 	
-	@Override
-	public int max(int i, int j) {
-		
-		int k=super.max(j, i)-100;
-		System.out.println(k);
-		return k;
-	}
-
 	protected void protectedTest() throws IOException{
 		// TODO Auto-generated method stub
 	}
@@ -20,6 +12,13 @@ public class ChildClss extends ParentClss{
 	protected void protectedTest(int i) {
 		// TODO Auto-generated method stub
 		super.protectedTest(i);
+	}
+
+	@Override
+	public int max(int i, int j) {
+		int k=super.max(i+100, j+100);
+		System.out.println(k);
+		return k;
 	}
 	
 

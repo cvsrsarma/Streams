@@ -2,6 +2,13 @@ package com.org.streams.first.defEx;
 
 public class ParentClss {
 	
+	public int max(int i, int j) {
+		if(i>j)
+			return i;
+		else
+			return j;
+	}
+	
 	protected void protectedTest() throws Exception {
 		System.out.println("protected clss");
 	}

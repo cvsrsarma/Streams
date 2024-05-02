@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -151,14 +151,20 @@ public class StringUtils {
 		System.out.println(empL);
 		System.out.println("number of employees in each department");
 		System.out.println(empL.stream().collect(Collectors.groupingBy(e->e.getDept(),Collectors.counting())));
+		System.out.println(empL.stream().collect(Collectors.groupingBy(e->e.getDept(),Collectors.toList())));
 		System.out.println("\n\n");
 	}
 	
 	public static void findYongestEmp() {
 		List <Employee> empL = ModelHelper.getEmployeeList();
 		System.out.println(empL);
-		System.out.println("Find Youngest employee from from org");
+		System.out.println("Find Youngest employee from org");
+		
 		System.out.println(empL.stream().min(Comparator.comparingInt(Employee::getAge)));
+		System.out.println(empL.stream().sorted(Comparator.comparingInt(Employee::getAge)).findFirst());
+		System.out.println("Find olderst employee from org");
+		System.out.println(empL.stream().sorted(Comparator.comparingInt(Employee::getAge).reversed()).findFirst());
+		
 		System.out.println("\n\n");
 	}
 	
@@ -175,6 +181,7 @@ public class StringUtils {
 		System.out.println(empL.stream().collect(Collectors.groupingBy(e->e.getDept())));
 		System.out.println(" the average age of each department ");
 		System.out.println(empL.stream().collect(Collectors.groupingBy(e->e.getDept(),Collectors.averagingInt(Employee::getAge))));
+		System.out.println("Find average salary of each department");
 		System.out.println("\n\n");
 	}
 	
@@ -184,6 +191,7 @@ public class StringUtils {
 		System.out.println("highest paid employee in the organization ");
 		System.out.println(empL.stream().max(Comparator.comparingInt(e->e.getSalary())));
 		System.out.println("\n\n");
+		System.out.println(empL.stream().collect(Collectors.groupingBy(Employee::getDept,Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary)))));
 	}
 	public static void findAvgSalarMndF() {
 		List <Employee> empL = ModelHelper.getEmployeeList();
@@ -191,6 +199,14 @@ public class StringUtils {
 		System.out.println("the average salary of male and female employees");
 		System.out.println(empL.stream().collect(Collectors.groupingBy(e->e.getGender(),Collectors.averagingInt(Employee::getSalary))));
 		System.out.println("\n\n");
+	}
+	
+	public static void findLowestPaidInEachDept() {
+		List <Employee> empL = ModelHelper.getEmployeeList();
+		System.out.println(empL);
+		System.out.println("Lowest paid employee in the organization ");
+		System.out.println(empL.stream().sorted(Comparator.comparingInt(Employee::getSalary)).limit(1).toList());
+		System.out.println(empL.stream().collect(Collectors.groupingBy(Employee::getDept,Collectors.minBy(Comparator.comparingInt(Employee::getSalary)))));
 	}
 
 	public static void findTtlNbrStdsForSbjct() {
@@ -287,6 +303,8 @@ public class StringUtils {
 		
 		
 	}
+
+	
 	
 	
 
