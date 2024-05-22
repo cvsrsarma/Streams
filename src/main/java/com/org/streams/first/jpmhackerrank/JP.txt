@@ -1,0 +1,734 @@
+1) Copy Cat
+
+Problem Statement :
+
+Ashish was copying from Rahit in the exam. So, Rahit told him to change the answers a little bit so that the examiner cannot find the fraud. But silly Ashish in the way started to change all the answers that were needed. He shuffled the letters in each word in a way where the maximum number of letters were misplaced.
+
+For a given word, find the maximum difference that Ashish can generate between his answer and Rahit’s answer.
+
+Suppose Rahit wrote “car” for an answer, Ashish can write “acr” with difference 2, or “arc” with differnece 3.
+
+Note That: The letters are all in lowercase.
+
+Input Format:
+
+First line containing an integer n, number of words.
+
+Then, n numbers of lines as the query words.
+
+Output:
+
+N number of lines with an integer each denoting possible maximum difference.
+
+Sample Input:
+
+4
+
+abababa
+
+bbj
+
+kj
+
+kk
+
+Sample Output:
+
+6
+
+2
+
+2
+
+0
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   -------------------------------   -------------------------------   
+2)2 :New Number System
+Problem Statement  :
+
+Here is about to introduce a new kind of number system. Where instead of 10 digits there is 20, from a to t, all in small. Now a means 1, b means 2 and t means 20, thenn aa means 21. Now for  a new number you have to print the decimal form it.
+
+Note that the letters in the input string will be lower case and from a to t. 
+
+Input Format:
+
+Single line containing the string of new number system’s number
+
+Output Format:
+
+Single line denoting the integer with the same decimal value as the input string
+
+Sample input 1: e
+
+Sample Output: 5
+
+Sample  Input 2: ac
+
+Sample Output: 23
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+3) Seating Arrangement in Exam Hall
+ 
+
+Problem Statement  :
+
+Semester exams are going on for university students. Examiners noticed that a group of people are trying to cheat. They marked students of that group as ‘1’ and students of another group ( who are not cheating ) as ‘0’ 
+
+We can reduce cheating by not allowing students from group 1 to sit together, means no two students from group 1 can sit together. Seatings are marked using above conditions. Your task is to give the seating placement of nth possibility Possibility order from 1 to 10 is given below
+
+[1  10  100  101  1000  1001  1010  10000  10001  10010]
+
+Sample input :
+
+3 → number of test cases
+
+4
+
+6
+
+9
+
+Sample output :
+
+101
+
+1001
+
+10001
+
+Explanation :
+
+4th possibility is 101 
+
+6th possibility is 1001
+
+9th possibility is 10001
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+4) Valid Parentheses
+Solved
+Easy
+
+
+
+
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+    Open brackets must be closed by the same type of brackets.
+    Open brackets must be closed in the correct order.
+    Every close bracket has a corresponding open bracket of the same type.
+
+ 
+
+Example 1:
+
+Input: s = "()"
+Output: true
+
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+
+Example 3:
+
+Input: s = "(]"
+Output: false
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+
+5) A Good Prime Number
+Problem Statement  :
+
+A prime number is a number which is divisible by one and itself. Also a number is called a good  prime number if the sum of its digits is a prime number. For example a number 23 is a good prime number because the sum of 2 and 3 ( 2+3=5) is 5 which is a prime number. You are given an integer K. Your task is to find the kth good prime number that is greater than a provided number N.
+
+For example , 232 is a good prime number since the sum of all digits is 7 which is a prime number whereas 235 is not a good prime number.
+
+Input format :
+
+The first line contains an integer N.
+The next line contains an integer K.
+Output format :
+
+A single integer which is a Kth good prime number that is greater than a provided number N.
+
+Constraints :
+
+1<=N<=10^5
+1<=K<<=10^5
+Sample Input 1:
+
+4  4
+
+Sample Output 1:
+
+12
+
+Explanation :
+
+Good prime numbers starting from 4 are 5,7,11(1+1=2 which is prime number),12(1+2=3 which is prime number),14(1+4=5 which is a prime number) and so on. Because the sum of digits of an individual number is a prime number And 4 th good prime number is 12 in this series.Hence the output is 12. 
+
+Sample Input 2:
+
+17  5
+
+Sample Output 2:
+
+29
+
+Explanation :
+
+Good prime numbers starting from 17 are 20,21,23,25,29…and the 5th prime number is 29.Hence the output is 29.
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+6) Happy Number
+Solved
+Easy
+
+
+
+Write an algorithm to determine if a number n is happy.
+
+A happy number is a number defined by the following process:
+
+    Starting with any positive integer, replace the number by the sum of the squares of its digits.
+    Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+    Those numbers for which this process ends in 1 are happy.
+
+Return true if n is a happy number, and false if not.
+
+ 
+
+Example 1:
+
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+
+Example 2:
+
+Input: n = 2
+Output: false
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+7) Best Time to Buy and Sell Stock
+Easy
+
+
+
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+ 
+
+Example 1:
+
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+
+Example 2:
+
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transactions are done and the max profit = 0.
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+8) Palindrome Number
+Easy
+
+
+
+
+Given an integer x, return true if x is a
+palindrome
+, and false otherwise.
+
+ 
+
+Example 1:
+
+Input: x = 121
+Output: true
+Explanation: 121 reads as 121 from left to right and from right to left.
+
+Example 2:
+
+Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+Example 3:
+
+Input: x = 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+9) Two Sum
+
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+Example 2:
+
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+
+Example 3:
+
+Input: nums = [3,3], target = 6
+Output: [0,1]
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+10) Reverse Integer
+
+
+Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+
+Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+
+ 
+
+Example 1:
+
+Input: x = 123
+Output: 321
+
+Example 2:
+
+Input: x = -123
+Output: -321
+
+Example 3:
+
+Input: x = 120
+Output: 21
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+
+11) Maximum Subarray
+
+
+Given an integer array nums, find the subarray
+with the largest sum, and return its sum.
+
+ 
+
+Example 1:
+
+Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: The subarray [4,-1,2,1] has the largest sum 6.
+
+Example 2:
+
+Input: nums = [1]
+Output: 1
+Explanation: The subarray [1] has the largest sum 1.
+
+Example 3:
+
+Input: nums = [5,4,-1,7,8]
+Output: 23
+Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+12) Intersection of Two Arrays
+Easy
+
+
+
+Given two integer arrays nums1 and nums2, return an array of their
+intersection
+. Each element in the result must be unique and you may return the result in any order.
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
+
+Example 2:
+
+Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [9,4]
+Explanation: [4,9] is also accepted.
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+13) First Unique Character in a String
+Easy
+
+
+
+Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+ 
+
+Example 1:
+
+Input: s = "leetcode"
+Output: 0
+
+Example 2:
+
+Input: s = "loveleetcode"
+Output: 2
+
+Example 3:
+
+Input: s = "aabb"
+Output: -1
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+13) Coin Change
+
+
+You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.  Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1. You may assume that you have an infinite number of each kind of coin.
+
+ 
+
+Example 1:
+
+Input: coins = [1,2,5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1
+
+Example 2:
+
+Input: coins = [2], amount = 3
+Output: -1
+
+Example 3:
+
+Input: coins = [1], amount = 0
+Output: 0
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+14) Break a Palindrome
+
+
+Given a palindromic string of lowercase English letters palindrome, replace exactly one character with any lowercase English letter so that the resulting string is not a palindrome and that it is the lexicographically smallest one possible.
+
+Return the resulting string. If there is no way to replace a character to make it not a palindrome, return an empty string.
+
+A string a is lexicographically smaller than a string b (of the same length) if in the first position where a and b differ, a has a character strictly smaller than the corresponding character in b. For example, "abcc" is lexicographically smaller than "abcd" because the first position they differ is at the fourth character, and 'c' is smaller than 'd'.
+
+ 
+
+Example 1:
+
+Input: palindrome = "abccba"
+Output: "aaccba"
+Explanation: There are many ways to make "abccba" not a palindrome, such as "zbccba", "aaccba", and "abacba".
+Of all the ways, "aaccba" is the lexicographically smallest.
+
+Example 2:
+
+Input: palindrome = "a"
+Output: ""
+Explanation: There is no way to replace a single character to make "a" not a palindrome, so return an empty string.
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+15) Next Permutation
+
+
+A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
+
+    For example, for arr = [1,2,3], the following are all the permutations of arr: [1,2,3], [1,3,2], [2, 1, 3], [2, 3, 1], [3,1,2], [3,2,1].
+
+The next permutation of an array of integers is the next lexicographically greater permutation of its integer. More formally, if all the permutations of the array are sorted in one container according to their lexicographical order, then the next permutation of that array is the permutation that follows it in the sorted container. If such arrangement is not possible, the array must be rearranged as the lowest possible order (i.e., sorted in ascending order).
+
+    For example, the next permutation of arr = [1,2,3] is [1,3,2].
+    Similarly, the next permutation of arr = [2,3,1] is [3,1,2].
+    While the next permutation of arr = [3,2,1] is [1,2,3] because [3,2,1] does not have a lexicographical larger rearrangement.
+
+Given an array of integers nums, find the next permutation of nums.
+
+The replacement must be in place and use only constant extra memory.
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+16) Letter Combinations of a Phone Number
+Medium
+
+
+
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
+
+A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+
+ 
+
+Example 1:
+
+Input: digits = "23"
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+17) Number of Islands
+Medium
+
+
+
+Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+ 
+
+Example 1:
+
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
+
+Example 2:
+
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+Output: 3
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+18) Longest Palindromic Substring
+
+
+Given a string s, return the longest
+palindromic
+substring
+in s.
+
+ 
+
+Example 1:
+
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+
+Example 2:
+
+Input: s = "cbbd"
+Output: "bb"
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+19) Search in Rotated Sorted Array
+
+There is an integer array nums sorted in ascending order (with distinct values).
+
+Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+
+Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+ 
+
+Example 1:
+
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+
+Example 2:
+
+Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
+
+Example 3:
+
+Input: nums = [1], target = 0
+Output: -1
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+20) LRU Cache
+Medium
+
+
+
+Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+
+Implement the LRUCache class:
+
+    LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
+    int get(int key) Return the value of the key if the key exists, otherwise return -1.
+    void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.
+
+The functions get and put must each run in O(1) average time complexity.
+
+ 
+
+Example 1:
+
+Input
+["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
+[[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+Output
+[null, null, null, 1, null, -1, null, -1, 3, 4]
+
+Explanation
+LRUCache lRUCache = new LRUCache(2);
+lRUCache.put(1, 1); // cache is {1=1}
+lRUCache.put(2, 2); // cache is {1=1, 2=2}
+lRUCache.get(1);    // return 1
+lRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
+lRUCache.get(2);    // returns -1 (not found)
+lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
+lRUCache.get(1);    // return -1 (not found)
+lRUCache.get(3);    // return 3
+lRUCache.get(4);    // return 4
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+21) Word Search
+Medium
+
+
+
+Given an m x n grid of characters board and a string word, return true if word exists in the grid.
+
+The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
+ 
+
+Example 1:
+
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
+Output: true
+
+Example 2:
+
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
+Output: true
+
+Example 3:
+
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCB"
+Output: false
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+22) Kth Largest Element in an Array
+Medium
+
+
+
+Given an integer array nums and an integer k, return the kth largest element in the array.
+
+Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+Can you solve it without sorting?
+
+ 
+
+Example 1:
+
+Input: nums = [3,2,1,5,6,4], k = 2
+Output: 5
+
+Example 2:
+
+Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
+Output: 4
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------   
+23) Combination Sum
+Medium
+
+
+
+Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order.
+
+The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the
+frequency
+of at least one of the chosen numbers is different.
+
+The test cases are generated such that the number of unique combinations that sum up to target is less than 150 combinations for the given input.
+
+ 
+
+Example 1:
+
+Input: candidates = [2,3,6,7], target = 7
+Output: [[2,2,3],[7]]
+Explanation:
+2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.
+7 is a candidate, and 7 = 7.
+These are the only two combinations.
+
+Example 2:
+
+Input: candidates = [2,3,5], target = 8
+Output: [[2,2,2,2],[2,3,3],[3,5]]
+
+Example 3:
+
+Input: candidates = [2], target = 1
+Output: []
+
+-------------------------------   -------------------------------   -------------------------------   -------------------------------  
+24) Integer to English Words
+
+
+
+Convert a non-negative integer num to its English words representation.
+
+ 
+
+Example 1:
+
+Input: num = 123
+Output: "One Hundred Twenty Three"
+
+Example 2:
+
+Input: num = 12345
+Output: "Twelve Thousand Three Hundred Forty Five"
+
+Example 3:
+
+Input: num = 1234567
+Output: "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
+
+
+-------------------------------   -------------------------------   -------------------------------   ------------------------------- 
+25) Median of Two Sorted Arrays
+
+
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+The overall run time complexity should be O(log (m+n)).
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+
+Example 2:
+
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+

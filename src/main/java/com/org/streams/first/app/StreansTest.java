@@ -9,6 +9,8 @@ public class StreansTest {
 
 	public static void main(String[] args) {
 		
+		StringUtils.strReverse();
+		
 		NbrStreamEx.seprateOddAndEvenNumbers();
 		NbrStreamEx.findEvenAndAddAll();
 		NbrStreamEx.findEvenAddSquers();

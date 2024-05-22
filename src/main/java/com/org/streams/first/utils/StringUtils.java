@@ -303,6 +303,14 @@ public class StringUtils {
 		
 		
 	}
+	
+	public static String strReverse() {
+		Scanner s = new Scanner(System.in);
+		String s1=s.nextLine();
+		System.out.println(s1);
+		System.out.println(Arrays.stream(s1.split(" ")).map(e->org.apache.commons.lang3.StringUtils.reverse(e)).collect(Collectors.toList()));
+		return "";
+	}
 
 	
 	
